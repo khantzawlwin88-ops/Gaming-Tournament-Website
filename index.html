@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ESPORTS ARENA</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>EA</span>
+            <div>
+                <h2>ESPORTS</h2>
+                <small>ARENA</small>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-item active" data-page="home">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </button>
+
+            <button class="nav-item" data-page="games">
+                <i class="fa-solid fa-gamepad"></i>
+                <span>Games</span>
+            </button>
+
+            <button class="nav-item" data-page="tournaments">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Tournaments</span>
+            </button>
+
+            <button class="nav-item" data-page="my-tournaments">
+                <i class="fa-solid fa-medal"></i>
+                <span>My Tournaments</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button class="nav-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help</span>
+            </button>
+
+            <button class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-box">
+                <i class="fa-solid fa-search"></i>
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search games, tournaments..."
+                >
+            </div>
+
+            <div class="user-area">
+
+                <button class="notification-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span></span>
+                </button>
+
+                <div class="user-profile">
+                    <div class="avatar">G</div>
+
+                    <div>
+                        <strong id="headerUsername">Guest</strong>
+                        <small>Player</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAGE CONTENT
+        ========================== -->
+        <section class="content">
+
+
+            <!-- =========================
+                 HOME PAGE
+            ========================== -->
+            <div class="page active-page" id="home">
+
+                <div class="hero">
+
+                    <div class="hero-content">
+
+                        <span class="hero-label">
+                            <i class="fa-solid fa-circle"></i>
+                            LIVE ESPORTS PLATFORM
+                        </span>
+
+                        <h1>
+                            PLAY.
+                            <span>COMPETE.</span>
+                            WIN.
+                        </h1>
+
+                        <p>
+                            Join competitive gaming tournaments,
+                            challenge players and teams,
+                            and prove your skills in the arena.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <button class="primary-btn" data-page-link="tournaments">
+                                Explore Tournaments
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                            <button class="secondary-btn" data-page-link="games">
+                                Browse Games
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-decoration">
+                        <div class="circle circle-one"></div>
+                        <div class="circle circle-two"></div>
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK STATS -->
+
+                <div class="section-title">
+                    <div>
+                        <span class="small-title">PLATFORM</span>
+                        <h2>ARENA OVERVIEW</h2>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div>
+                            <span>Active Tournaments</span>
+                            <strong>12</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div>
+                            <span>Registered Players</span>
+                            <strong>8,420+</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <span>Supported Games</span>
+                            <strong>8</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <div>
+                            <span>Total Prize Pool</span>
+                            <strong>18M MMK</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- FEATURED TOURNAMENTS -->
+
+                <div class="section-title">
+                    <div>
+                        <span class="small-title">COMPETE NOW</span>
+                        <h2>FEATURED TOURNAMENTS</h2>
+                    </div>
+
+                    <button class="text-btn" data-page-link="tournaments">
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="tournament-grid" id="featuredTournaments"></div>
+
+            </div>
+
+
+            <!-- =========================
+                 GAMES PAGE
+            ========================== -->
+            <div class="page" id="games">
+
+                <div class="page-heading">
+                    <div>
+                        <span class="small-title">GAME LIBRARY</span>
+                        <h1>Choose Your Game</h1>
+                        <p>
+                            Select a game and find tournaments that match your skills.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="game-grid" id="gameGrid"></div>
+
+            </div>
+
+
+            <!-- =========================
+                 TOURNAMENTS PAGE
+            ========================== -->
+            <div class="page" id="tournaments">
+
+                <div class="page-heading">
+
+                    <div>
+                        <span class="small-title">COMPETITION</span>
+                        <h1>All Tournaments</h1>
+                        <p>
+                            Choose a tournament and enter the competition.
+                        </p>
+                    </div>
+
+                    <select id="gameFilter">
+                        <option value="all">All Games</option>
+                        <option value="mlbb">Mobile Legends</option>
+                        <option value="pubg">PUBG Mobile</option>
+                        <option value="freefire">Free Fire</option>
+                        <option value="valorant">Valorant</option>
+                        <option value="efootball">eFootball</option>
+                        <option value="codm">Call of Duty Mobile</option>
+                    </select>
+
+                </div>
+
+                <div class="tournament-grid" id="tournamentGrid"></div>
+
+            </div>
+
+
+            <!-- =========================
+                 MY TOURNAMENTS
+            ========================== -->
+            <div class="page" id="my-tournaments">
+
+                <div class="page-heading">
+
+                    <div>
+                        <span class="small-title">YOUR COMPETITIONS</span>
+                        <h1>My Tournaments</h1>
+                        <p>
+                            Tournaments you have registered for.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="myTournamentList"></div>
+
+            </div>
+
+
+            <!-- =========================
+                 TOURNAMENT HUB
+            ========================== -->
+            <div class="page" id="arena">
+
+                <button class="back-btn" id="backToTournaments">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Tournaments
+                </button>
+
+                <div id="arenaContent"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         REGISTRATION MODAL
+    ========================== -->
+
+    <div class="modal-overlay" id="registerModal">
+
+        <div class="modal">
+
+            <button class="close-modal" data-close="registerModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+
+                <span class="modal-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </span>
+
+                <div>
+                    <span class="small-title">TOURNAMENT REGISTRATION</span>
+                    <h2 id="registerTournamentName">
+                        Tournament
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <!-- STEP 1 -->
+
+            <div class="register-step active-step" id="registerStep1">
+
+                <div class="form-group">
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        id="usernameInput"
+                        placeholder="Enter your username"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="Enter your email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        placeholder="Create a password"
+                    >
+                </div>
+
+
+                <div class="selected-tournament-info">
+
+                    <div>
+                        <span>Game</span>
+                        <strong id="selectedGame">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Format</span>
+                        <strong id="selectedFormat">-</strong>
+                    </div>
+
+                </div>
+
+
+                <button class="primary-btn full-btn" id="continueRegistration">
+                    Continue
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="register-step" id="registerStep2">
+
+                <h3>Select Tournament Level</h3>
+
+                <div class="level-options">
+
+                    <label class="level-card">
+
+                        <input
+                            type="radio"
+                            name="level"
+                            value="casual"
+                            checked
+                        >
+
+                        <div>
+                            <span class="level-badge">CASUAL</span>
+
+                            <h4>Casual Tournament</h4>
+
+                            <p>
+                                Friendly competition for everyone.
+                            </p>
+
+                            <strong>Entry: 10,000 MMK</strong>
+                        </div>
+
+                    </label>
+
+
+                    <label class="level-card">
+
+                        <input
+                            type="radio"
+                            name="level"
+                            value="local"
+                        >
+
+                        <div>
+                            <span class="level-badge">LOCAL</span>
+
+                            <h4>Local Tournament</h4>
+
+                            <p>
+                                Compete with strong local players.
+                            </p>
+
+                            <strong>Entry: 25,000 MMK</strong>
+                        </div>
+
+                    </label>
+
+
+                    <label class="level-card">
+
+                        <input
+                            type="radio"
+                            name="level"
+                            value="global"
+                        >
+
+                        <div>
+                            <span class="level-badge">GLOBAL</span>
+
+                            <h4>Global Tournament</h4>
+
+                            <p>
+                                High-level international competition.
+                            </p>
+
+                            <strong>Entry: 100,000 MMK</strong>
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button class="secondary-btn" id="backRegistration">
+                        Back
+                    </button>
+
+                    <button class="primary-btn" id="continuePayment">
+                        Continue to Payment
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PAYMENT MODAL
+    ========================== -->
+
+    <div class="modal-overlay" id="paymentModal">
+
+        <div class="modal payment-modal">
+
+            <button class="close-modal" data-close="paymentModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+
+                <span class="modal-icon">
+                    <i class="fa-solid fa-credit-card"></i>
+                </span>
+
+                <div>
+                    <span class="small-title">SECURE CHECKOUT</span>
+                    <h2>Demo Payment</h2>
+                </div>
+
+            </div>
+
+
+            <div class="payment-summary">
+
+                <div>
+                    <span>Tournament</span>
+                    <strong id="paymentTournament">-</strong>
+                </div>
+
+                <div>
+                    <span>Level</span>
+                    <strong id="paymentLevel">-</strong>
+                </div>
+
+                <div class="payment-total">
+                    <span>Total Entry Fee</span>
+                    <strong id="paymentAmount">0 MMK</strong>
+                </div>
+
+            </div>
+
+
+            <div class="demo-notice">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>
+                    This is a simulated payment for the website demo.
+                    No real money will be charged.
+                </p>
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Payment Method</label>
+
+                <select id="paymentMethod">
+
+                    <option value="kbz">
+                        KBZ Pay
+                    </option>
+
+                    <option value="wave">
+                        Wave Money
+                    </option>
+
+                    <option value="aya">
+                        AYA Pay
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button class="primary-btn full-btn" id="payNow">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Pay Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SUCCESS MODAL
+    ========================== -->
+
+    <div class="modal-overlay" id="successModal">
+
+        <div class="modal success-modal">
+
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h2>Registration Successful!</h2>
+
+            <p>
+                Your tournament registration has been completed.
+            </p>
+
+            <div class="success-details">
+
+                <div>
+                    <span>Tournament</span>
+                    <strong id="successTournament">-</strong>
+                </div>
+
+                <div>
+                    <span>Level</span>
+                    <strong id="successLevel">-</strong>
+                </div>
+
+                <div>
+                    <span>Entry Fee</span>
+                    <strong id="successAmount">-</strong>
+                </div>
+
+            </div>
+
+            <button class="primary-btn full-btn" id="enterArenaBtn">
+                Enter Arena
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
